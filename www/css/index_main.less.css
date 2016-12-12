@@ -2012,6 +2012,7 @@ label:empty {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
+    background-size: cover;
   }
 }
 @media all {
@@ -2073,4 +2074,7 @@ label:empty {
 }
 .list-group .d-margins {
   margin: 0;
+}
+.imgtitre {
+  height: 50px;
 }
