@@ -8,6 +8,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="galleria/galleria.classic.css">
         <link rel="stylesheet" type="text/css" href="icon-fonts/font-awesome-4.3.0/css/font-awesome.css">
+        <link rel=stylesheet href="css/jquery.calendarPicker.css" type="text/css" media="screen">
         <link rel="stylesheet" type="text/css" href="icon-fonts/elusive-icons-2.0.0/css/elusive-icons.css">
         <link rel="stylesheet" type="text/css" href="flatly/css/flatly.min.css" class="uib-framework-theme">
         <meta charset="UTF-8">
@@ -65,8 +66,9 @@
         <!-- for your init code, see README and file comments for details -->
         <script src="xdk/init-dev.js"></script>
         <!-- normalizes device and document ready events, see file for details -->
-        <script type="application/javascript" src="lib/jquery.min.js"></script>
         <script type="application/javascript" src="js/listeJeux.js"></script>
+        <script type="application/javascript" src="js/evenement.js"></script>
+        <script type="application/javascript" src="lib/jquery.min.js"></script>
         <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
         <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
         <script type="application/javascript" src="galleria/galleria-1.3.6.min.js"></script>
@@ -74,6 +76,8 @@
         <script type="application/javascript" src="galleria/galleria-startup.js"></script>
         <script type="application/javascript" src="js/index_user_scripts.js"></script>
         <script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
+        <script type="text/javascript" src="js/jquery.calendarPicker.js"></script>
+        <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
     </head>
 
     <body>
@@ -91,7 +95,7 @@
                 <div class="upage-content ac0 content-area vertical-col left" id="page_46_52">
                     <div class="card_grid widget uib_w_2 wrapping-col Lay flex-basis-2 margeLy" data-uib="layout/card_grid" data-ver="0" id="layOne">
                         <div class="widget widget-container content-area vertical-col uib-card uib_w_3 cpad-0 Lay" data-uib="layout/card" data-ver="0">
-                            <button class="btn widget uib_w_7 d-margins textBtn  tailleBtn btn-lg btn-default" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="fa fa-list-ol button-icon-top" data-position="top"></i>Evénements</button>
+                            <button class="btn widget uib_w_7 d-margins textBtn btn-lg  tailleBtn btn-default" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="fa fa-list-ol button-icon-top" data-position="top"></i>Evénements</button>
                         </div>
                         <div class="widget widget-container content-area vertical-col uib-card uib_w_4 cpad-0 Lay" data-uib="layout/card" data-ver="0">
                             <button class="btn widget uib_w_8  tailleBtn textBtnL d-margins btn-default" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="el el-podcast button-icon-top" data-position="top"></i>Informations compte</button>
@@ -112,7 +116,51 @@
 
                 </div>
                 <div id="listeJeux" class="upage-content vertical-col left hidden">
-                    <div id="listViewJeux" class="list-group widget uib_w_11 d-margins" data-uib="twitter%20bootstrap/list_group" data-ver="1"></div>
+
+                </div>
+                <div id="evenements" class="upage-content vertical-col left hidden">
+                    <div class="tab-content widget uib_w_11 d-margins" data-uib="twitter%20bootstrap/tabs" data-ver="1">
+                        <div role="tabpanel" id="first-tab" class="col uib_col_7 tab-pane active in fade" data-uib="layout/col" data-ver="0">
+                            <div class="widget-container content-area vertical-col">
+
+<div id="dsel1" style="width:240px"></div><br>
+
+<a href="calendarPicker.html#" onclick="calendarPicker2.changeDate(new Date())">today</a>
+<div id="dsel2" style="width:340px"></div>
+<br>
+<span id="wtf"></span>
+                                <script type="text/javascript">
+
+
+  var calendarPicker2 = $("#dsel2").calendarPicker({
+    monthNames:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    dayNames: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    //useWheel:true,
+    //callbackDelay:500,
+    years:2,
+    months:4,
+    days:5,
+    showDayArrows:false,
+    callback:function(cal) {
+      $("#wtf").html("Selected date: " + cal.currentDate);
+    }});
+
+</script>
+                                <span class="uib_shim"></span>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="second-tab" class="col uib_col_8 tab-pane fade" data-uib="layout/col" data-ver="0">
+                            <div class="widget-container content-area vertical-col">
+                                <span class="uib_shim"></span>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="third-tab" class="col uib_col_9 tab-pane fade" data-uib="layout/col" data-ver="0">
+                            <div class="widget-container content-area vertical-col">
+                                <span class="uib_shim"></span>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

@@ -18,6 +18,14 @@
          return false;
     });
     
+        /* button  .uib_w_7 */
+    $(document).on("click", ".uib_w_7", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#evenements"); 
+         return false;
+    });
+    
     }
  document.addEventListener("app.Ready", register_event_handlers, false);
 })();
