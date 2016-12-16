@@ -9,6 +9,7 @@ function getAllGames() {
 }
 
 
+
 function getOneGames(id) {
     var apiHost = 'https://xenomorphe.ch/wp-json';
     $.get(apiHost + '/wp/v2/xenogame/' + id)
