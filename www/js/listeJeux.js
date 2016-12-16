@@ -21,5 +21,6 @@ function getOneGames(id) {
             return respond.data;
         })
 }
+//coucou
 
 getAllGames();
